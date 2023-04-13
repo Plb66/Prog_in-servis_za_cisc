@@ -1,17 +1,23 @@
 <template>
-  <q-page class="flex flex-center">
-    <img
-      alt="Quasar logo"
-      src="~assets/quasar-logo-vertical.svg"
-      style="width: 200px; height: 200px"
-    >
+  <q-page padding class="flex flex-center">
+    <div class="q-gutter-md" style="max-width: 350px">
+      <q-input v-model="inputUsername" label="Username" placeholder="Korisnikov username">
+      </q-input>
+
+      <q-input v-model="inputPassword" label="Zaporuka" placeholder="Korisnikova Zaporuka">
+      </q-input>
+
+
+      <div class="row justify-center q-pa-md">
+        <q-btn align="between" unelevated color="primary" @click="SubmitUnos" label="Potvrdi" text-align="center" />
+      </div>
+    </div>
   </q-page>
 </template>
 
 <script>
-import { defineComponent } from 'vue'
+import { ref } from 'vue'
 
-export default defineComponent({
-  name: 'IndexPage'
-})
+const inputUsername = ref('')
+const inputPassword = ref('')
 </script>
