@@ -13,7 +13,38 @@ const routes = [
         path: 'izbornik_admin'
       ,
        component: () => import('pages/izbornikAdmin.vue')
-      }
+      },
+
+      {
+        path: 'izbornik_korisnik'
+      ,
+       component: () => import('pages/izbornikKorisnik.vue')
+      },
+      {
+        path: 'kalendar'
+      ,
+       component: () => import('pages/kalendarAdmin.vue')
+      },
+      {
+        path: 'novi_zahtjev'
+      ,
+       component: () => import('pages/NoviZahtjev_korisnik.vue')
+      },
+      {
+        path: 'popis_zahtjeva'
+      ,
+       component: () => import('pages/PopisZahtjeva_admin.vue')
+      },
+      {
+        path: 'popis_zahtjeva_kor'
+      ,
+       component: () => import('pages/PopisZahtjeva_korisnik.vue')
+      },
+      {
+        path: 'zahtjevi_na_cekanju'
+      ,
+       component: () => import('pages/ZahtjeviNaCekanju_admin.vue')
+      },
     ]
   },
 
