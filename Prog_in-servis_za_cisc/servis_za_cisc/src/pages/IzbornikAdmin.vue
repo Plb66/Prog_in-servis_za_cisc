@@ -1,12 +1,6 @@
 <template>
   <q-page padding class="flex flex-center">
     <div class="q-gutter-md" style="max-width: 350px">
-      <q-input v-model="inputUsername" label="Username" placeholder="Korisnikov username">
-      </q-input>
-
-      <q-input v-model="inputPassword" label="Zaporuka" placeholder="Korisnikova Zaporuka">
-      </q-input>
-
 
       <div class="row justify-center q-pa-md">
         <q-btn align: between unelevated color="primary" label="Potvrdi" text-align="center" />
@@ -19,9 +13,5 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import ErrorNotFound from './ErrorNotFound.vue';
 
-const inputUsername = ref('')
-const inputPassword = ref('')
 </script>

@@ -2,9 +2,18 @@
 const routes = [
   {
     path: '/',
-    component: () => import('layouts/MainLayout.vue'),
+    component: () => import('layouts/NewLayout'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') }
+      {
+        path: ''
+      ,
+       component: () => import('pages/IndexPage.vue')
+      },
+      {
+        path: 'izbornik_admin'
+      ,
+       component: () => import('pages/izbornikAdmin.vue')
+      }
     ]
   },
 
