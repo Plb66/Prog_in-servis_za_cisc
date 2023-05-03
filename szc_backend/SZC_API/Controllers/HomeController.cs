@@ -1,32 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-using SZC_API.Models;
+using System.Web.Http.Cors;
 
-namespace SZC_API.Controllers
+namespace bookmarks4projects.Controllers
 {
-    public class HomeController : Controller
+    [EnableCors(origins: "http://localhost:44335", headers: "*", methods: "*")]
+    public class HomeController : Microsoft.AspNetCore.Mvc.Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
         {
+            // var mUser = new BookmarkDataController().GetWindowsUser();
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            //ViewData["RequestId"] = Activity.Current.Id ?? System.Web.HttpContext.TraceIdentifier;
+            return View();
         }
     }
 }
