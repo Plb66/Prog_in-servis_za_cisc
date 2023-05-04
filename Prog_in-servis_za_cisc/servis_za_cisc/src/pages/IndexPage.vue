@@ -19,7 +19,7 @@
     </div>
       </q-card-section>
       <div class="row justify-center q-pa-sm">
-        <q-btn align: between unelevated color="primary" label="Login" @click="$router.replace('korisnik')" class="full-with" text-align="center" />
+        <q-btn align: between unelevated color="primary" label="Login" @click="$router.replace('admin')" class="full-with" text-align="center" />
       </div>
     </q-card>
     </div>
