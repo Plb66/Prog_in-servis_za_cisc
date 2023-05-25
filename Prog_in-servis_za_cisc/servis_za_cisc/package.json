@@ -12,16 +12,21 @@
   },
   "dependencies": {
     "@quasar/extras": "^1.0.0",
+    "@quasar/quasar-ui-qcalendar": "^4.0.0-beta.15",
     "axios": "^1.4.0",
     "core-js": "^3.6.5",
+    "qalendar": "^2.5.0",
     "quasar": "^2.6.0",
+    "ui": "^0.2.4",
     "vue": "^3.0.0",
     "vue-router": "^4.0.0",
+    "vue-simple-calendar": "^6.3.1",
     "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.13.14",
     "@quasar/app-webpack": "^3.0.0",
+    "@quasar/quasar-app-extension-qcalendar": "^4.0.0-beta.15",
     "eslint": "^8.10.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-vue": "^9.0.0",
