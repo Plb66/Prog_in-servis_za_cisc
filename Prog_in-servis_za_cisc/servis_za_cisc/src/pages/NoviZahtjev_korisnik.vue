@@ -33,12 +33,16 @@
                 <select name="vrsta_sm" id="vrsta_sm">
                   <option value="Apartman">Apartman</option>
                   <option value="Studio apartman">Studio apartman</option>
-                  <option value="Kuća za iznajmljivanje">Kuća za iznajmljivanje</option>
+                  <option value="Kuća za iznajmljivanje">
+                    Kuća za iznajmljivanje
+                  </option>
                 </select>
                 <select name="vrsta_ci" id="vrsta_ci">
                   <option value="Generalka">Generalka</option>
                   <option value="Standardno">Standardno</option>
-                  <option value="Promjena posteljine">Promjena posteljine</option>
+                  <option value="Promjena posteljine">
+                    Promjena posteljine
+                  </option>
                 </select>
                 <div class="row justify-center q-pa-md">
                   <div class="row justify-center q-pa-md">
@@ -48,6 +52,9 @@
                       color="blue"
                       class="q-ml-sm"
                     />
+                    <q-btn align: between unelevated color="primary"
+                    @click="$router.push('/korisnik')" label="Natrag"
+                    text-align="center" />
                   </div>
                 </div>
               </div>
@@ -74,6 +81,12 @@ const smjestaj = ["Apartman", "Studio apartman", "Kuća za iznajmljivanje"];
 const ciscenje = ["generalka", "standardno", "promjena posteljine"];
 
 export default {
+  data() {
+    return {
+      username: "h",
+      number: 0
+    }
+  },
   setup() {
     const options = ref(stringOptions);
 
@@ -100,11 +113,16 @@ export default {
       },
     };
   },
+  mounted() {
+    this.username=localStorage.getItem("current_user_name");
+    this.number=localStorage.getItem("current_user_number");
+  },
   methods: {
     sendRequest() {
-      this.id_klijenta = 1;
+      this.id_klijenta = this.number;
       this.termin_z =
-        document.getElementById("datum").value +" "+
+        document.getElementById("datum").value +
+        " " +
         document.getElementById("vrijeme").value;
       this.adresa_z = document.getElementById("adresa").value;
       this.tip_ciscenje_z = document.getElementById("vrsta_ci").value;
@@ -117,7 +135,7 @@ export default {
         tip_ciscenje_z: this.tip_ciscenje_z,
         tip_apartman_z: this.tip_apartman_z,
         tel_broj_z: this.tel_broj_z,
-        });
+      });
     },
   },
 };

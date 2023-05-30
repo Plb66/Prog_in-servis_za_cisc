@@ -34,28 +34,38 @@ import axios from "axios";
 var userData, current_user;
 export default {
   mounted() {
-    axios.get("http://localhost:44335/api/getAllClients").then((response) => {
-          userData = response.data;
-        })
-        .catch((e) => {
-          console.log(e);
-        });
   },
   methods: {
     log_in() {
       this.kor_ime = document.getElementById("kor_ime").value;
       this.lozinka = document.getElementById("lozinka").value;
-      for (let i = 0; i < userData.length; i++) {
+      /*for (let i = 0; i < userData.length; i++) {
         if(userData[i].kor_ime==this.kor_ime&&userData[i].lozinka==this.lozinka){
           current_user=userData[i];
           this.$router.replace("korisnik");
         }
-      }
+      }*/
+      axios
+        .get("http://localhost:44335/api/log_in/" + this.kor_ime +'/'+ this.lozinka)
+        .then((response) => {
+          if(response.data.length!=0){
+            current_user=response.data;
+            if (current_user[0].kor_ime=="Admin") {
+              this.$router.replace("admin");
+            } else {
+              this.$router.replace("korisnik");
+            }
+          }else{
+            alert("Krivi login!")
+          }
+        })
+        .catch((e) => {
+          console.log(e);
+        });
     },
   },
-  
 };
-export {current_user}
+export { current_user };
 </script>
 <script setup>
 import { ref } from "vue";
