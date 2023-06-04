@@ -2,7 +2,7 @@
   <q-page padding class="flex flex-center">
     <div class="q-pa-md full-with" style="max-width: 1500px">
       <div class="q-pa-md">
-        <table style="width: 100%" id="t1">
+        <table style="width: 100%; background-color: white;" id="t1">
           <tr>
             <th>Termin</th>
             <th>Adresa</th>

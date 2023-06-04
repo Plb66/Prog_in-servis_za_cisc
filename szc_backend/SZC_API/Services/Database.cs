@@ -88,15 +88,24 @@ namespace SZC_API.Services
 
             return PokreniProceduru<Models.Zahtjevi>("getRequestStatus", sqlParams).ToList<Models.Zahtjevi>();
         }
-        public List<Models.Klijenti> log_in([FromBody] Klijenti k)
+        public List<Models.Klijenti> log_in(string kor_ime, string lozinka)
         {
             List<SqlParameter> sqlParams = new List<SqlParameter>()
             {
-                new SqlParameter("@kor_ime", k.kor_ime),
-                new SqlParameter("@lozinka", k.lozinka),
+                new SqlParameter("@kor_ime", kor_ime),
+                new SqlParameter("@lozinka", lozinka),
             };
 
             return PokreniProceduru<Models.Klijenti>("log_in", sqlParams).ToList<Models.Klijenti>();
+        }
+        public List<Models.Zahtjevi> getRequest(int current_user_number)
+        {
+            List<SqlParameter> sqlParams = new List<SqlParameter>()
+            {
+                new SqlParameter("@id_klijenta", current_user_number),
+            };
+
+            return PokreniProceduru<Models.Zahtjevi>("getRequest", sqlParams).ToList<Models.Zahtjevi>();
         }
         public List<Models.Zahtjevi> getAllRequests()
         {

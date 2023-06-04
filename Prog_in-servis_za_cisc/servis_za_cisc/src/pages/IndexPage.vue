@@ -14,7 +14,7 @@
               placeholder="Korisničko ime"
             /><br />
             <input
-              type="text"
+              type="password"
               id="lozinka"
               name="lozinka"
               placeholder="Lozinka"
@@ -31,9 +31,10 @@
 </template>
 <script>
 import axios from "axios";
-var userData, current_user;
+var userData, current_user, adminAccess;
 export default {
   mounted() {
+    localStorage.setItem("adminAccess", "false");
   },
   methods: {
     log_in() {
@@ -46,17 +47,34 @@ export default {
         }
       }*/
       axios
-        .get("http://localhost:44335/api/log_in/" + this.kor_ime +'/'+ this.lozinka)
+        .get(
+          "http://localhost:44335/api/log_in/" +
+            this.kor_ime +
+            "/" +
+            this.lozinka
+        )
         .then((response) => {
-          if(response.data.length!=0){
-            current_user=response.data;
-            if (current_user[0].kor_ime=="Admin") {
+          if (response.data.length != 0) {
+            current_user = response.data;
+            if (current_user[0].kor_ime == "Admin") {
+              adminAccess = true;
+              localStorage.setItem("adminAccess", "true");
               this.$router.replace("admin");
             } else {
+              if (current_user != undefined) {
+                localStorage.setItem(
+                  "current_user_number",
+                  current_user[0].id_klijenta
+                );
+                localStorage.setItem(
+                  "current_user_name",
+                  current_user[0].kor_ime
+                );
+              }
               this.$router.replace("korisnik");
             }
-          }else{
-            alert("Krivi login!")
+          } else {
+            alert("Krivi login!");
           }
         })
         .catch((e) => {
@@ -66,6 +84,7 @@ export default {
   },
 };
 export { current_user };
+export { adminAccess };
 </script>
 <script setup>
 import { ref } from "vue";

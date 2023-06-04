@@ -43,7 +43,7 @@
           </div>
         </div>
       </q-card>-->
-      <table style="width: 100%" id="t1">
+      <table style="width: 100%; background-color: white;" id="t1">
         <tr>
           <th>Termin</th>
           <th>Adresa</th>

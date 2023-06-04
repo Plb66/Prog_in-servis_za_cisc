@@ -7,6 +7,7 @@ using SZC_API.Models;
 using System.Web.Http.Cors;
 using System.Security.Principal;
 using System.Web.Routing;
+using System.Runtime.CompilerServices;
 
 namespace SZC_API.Controllers
 {
@@ -22,10 +23,16 @@ namespace SZC_API.Controllers
             return new Services.Database().getAllClients();
         }
         [System.Web.Http.HttpGet]
-        [System.Web.Http.Route("api/log_in")]
-        public List<Models.Klijenti> log_in([Microsoft.AspNetCore.Mvc.FromBody] Klijenti k)
+        [System.Web.Http.Route("api/log_in/{kor_ime?}/{lozinka?}")]
+        public List<Models.Klijenti> log_in(string kor_ime, string lozinka)
         {
-            return new Services.Database().log_in(k);
+            return new Services.Database().log_in(kor_ime, lozinka);
+        }
+        [System.Web.Http.HttpGet]
+        [System.Web.Http.Route("api/getRequest/{cun?}")]
+        public List<Models.Zahtjevi> getRequest(int cun)
+        {
+            return new Services.Database().getRequest(cun);
         }
         [System.Web.Http.HttpGet]
         [System.Web.Http.Route("api/getAllCleanups")]

@@ -15,6 +15,7 @@
     "@quasar/quasar-ui-qcalendar": "^4.0.0-beta.15",
     "axios": "^1.4.0",
     "core-js": "^3.6.5",
+    "cors": "^2.8.5",
     "qalendar": "^2.5.0",
     "quasar": "^2.6.0",
     "ui": "^0.2.4",
