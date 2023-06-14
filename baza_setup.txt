@@ -6,4 +6,5 @@ https://learn.microsoft.com/en-us/sql/relational-databases/databases/create-a-da
 Nakon toga je potrebno stvoriti sa login
 https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-login?view=sql-server-ver16
 https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/change-server-authentication-mode?view=sql-server-ver16
-I na kraju je potrebno otvoriti
+I na kraju je potrebno otvoriti datoteku Servis_za_ciscenje.bak na sljedeci nacin
+https://learn.microsoft.com/en-us/sql/relational-databases/backup-restore/quickstart-backup-restore-database?view=sql-server-ver16
