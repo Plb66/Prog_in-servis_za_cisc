@@ -1,0 +1,9 @@
+Prvo je potrebno instalirati SQL Server Management Studio i SQL Server
+https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16
+https://www.microsoft.com/en-us/sql-server/sql-server-downloads
+Onda je potrebno stvoriti novu bazu podataka u SSMS-u
+https://learn.microsoft.com/en-us/sql/relational-databases/databases/create-a-database?view=sql-server-ver16
+Nakon toga je potrebno stvoriti sa login
+https://learn.microsoft.com/en-us/sql/relational-databases/security/authentication-access/create-a-login?view=sql-server-ver16
+https://learn.microsoft.com/en-us/sql/database-engine/configure-windows/change-server-authentication-mode?view=sql-server-ver16
+I na kraju je potrebno otvoriti
